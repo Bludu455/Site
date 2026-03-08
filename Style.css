@@ -1,17 +1,16 @@
-/* Подключаем шрифт Inter из Google Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-/* АНИМАЦИИ */
-/* Плавное изменение цвета для заголовка */
+
 @keyframes gentle-color {
-    0% { color: #5988FF; } /* Голубой */
-    25% { color: #FD98FB; } /* Розовый */
-    50% { color: #D6FF6B; } /* Салатовый */
-    75% { color: #FD98FB; } /* Розовый */
-    100% { color: #5988FF; } /* Голубой */
+    0% { color: #5988FF; }
+    25% { color: #FD98FB; }
+    50% { color: #D6FF6B; }
+    75% { color: #FD98FB; } 
+    100% { color: #5988FF; }
 }
 
-/* Анимация появления элементов */
+
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -23,27 +22,26 @@
     }
 }
 
-/* Анимация пульсации для важных элементов */
+
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
 
-/* Анимация вращения для иконок (если добавим) */
+
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-/* Анимация фона */
+
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Анимация блика */
 @keyframes shine {
     to { left: 200%; }
 }
@@ -53,7 +51,7 @@ body {
     font-size: 14px;
     background: linear-gradient(-45deg, #FFFFFF, #F0F5FF, #FFFFFF, #FFF0FD);
     background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite; /* Медленное изменение фона */
+    animation: gradientBG 15s ease infinite; 
     color: #333333;
     padding: 30px;
     max-width: 900px;
@@ -68,13 +66,12 @@ h1 {
     border-bottom: 4px solid #FD98FB;
     padding-bottom: 15px;
     text-align: center;
-    animation: gentle-color 8s infinite, fadeInUp 1s ease; /* Медленное изменение цвета + появление */
+    animation: gentle-color 8s infinite, fadeInUp 1s ease; 
 }
 
-/* ПРИ НАВЕДЕНИИ - заголовок начинает пульсировать */
 h1:hover {
-    animation: pulse 1s infinite !important; /* !important переопределяет другие анимации */
-    color: #5988FF; /* Фиксируем цвет */
+    animation: pulse 1s infinite !important; 
+    color: #5988FF; 
     border-bottom-color: #D6FF6B;
     cursor: pointer;
 }
@@ -90,11 +87,11 @@ h2 {
     border-radius: 30px;
     display: inline-block;
     border: 2px solid #5988FF;
-    transition: all 0.3s ease; /* Плавные изменения */
-    animation: fadeInUp 1s ease 0.2s both; /* Появление с задержкой */
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease 0.2s both; 
 }
 
-/* При наведении на h2 - легкое покачивание */
+
 h2:hover {
     transform: translateX(10px) scale(1.05);
     background-color: #5988FF;
@@ -110,11 +107,11 @@ p {
     border-radius: 20px;
     border-left: 8px solid #5988FF;
     box-shadow: 0 4px 8px rgba(89, 136, 255, 0.2);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Эффект пружины */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     animation: fadeInUp 1s ease 0.4s both;
 }
 
-/* При наведении на абзац - легкое поднятие */
+
 p:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 20px rgba(89, 136, 255, 0.3);
@@ -139,15 +136,14 @@ li {
     transition: all 0.3s ease;
 }
 
-/* Плавное появление пунктов списка по очереди */
+
 li:nth-child(1) { animation: fadeInUp 0.5s ease 0.8s both; }
 li:nth-child(2) { animation: fadeInUp 0.5s ease 1.0s both; }
 li:nth-child(3) { animation: fadeInUp 0.5s ease 1.2s both; }
 
-/* При наведении на пункт списка - эффект */
 li:hover {
     transform: translateX(15px);
-    background-color: rgba(253, 152, 251, 0.1); /* Розовый полупрозрачный */
+    background-color: rgba(253, 152, 251, 0.1);
     border-radius: 30px;
     padding-left: 45px;
 }
@@ -193,15 +189,15 @@ img {
     animation: fadeInUp 1s ease 1.4s both;
 }
 
-/* Прикольная анимация для картинки */
+
 img:hover {
     transform: scale(1.03) rotate(1deg);
     border-color: #FD98FB;
-    border-radius: 50px 20px 50px 20px; /* Меняем форму при наведении */
+    border-radius: 50px 20px 50px 20px; 
     box-shadow: 0 20px 30px rgba(253, 152, 251, 0.4);
 }
 
-/* Стиль для последнего абзаца (про способ проверки) */
+
 p:last-of-type {
     background-color: #5988FF;
     color: #FFFFFF;
@@ -213,7 +209,7 @@ p:last-of-type {
     overflow: hidden;
 }
 
-/* Добавляем бегущий эффект для важного сообщения */
+
 p:last-of-type::after {
     content: "";
     position: absolute;
@@ -231,7 +227,7 @@ p:last-of-type:hover {
     border-left-color: #5988FF;
 }
 
-/* ========== СТИЛИ ДЛЯ ВИДЖЕТА ПОГОДЫ ========== */
+ 
 .weather-widget {
     background: linear-gradient(135deg, #5988FF20 0%, #FD98FB20 100%);
     padding: 20px;
@@ -253,4 +249,5 @@ p:last-of-type:hover {
     border-radius: 15px;
     background-color: white;
     max-width: 100%;
+
 }
